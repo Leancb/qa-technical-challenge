@@ -2,7 +2,7 @@
 
 Automação em Java 17, Selenium WebDriver, RestAssured e JUnit 5; performance em JMeter 5.6.3. A estrutura separa testes, interação com páginas e planos de performance. JUnit mantém a solução pequena: o desafio não exige uma camada adicional de BDD.
 
-**Estado da validação (22/09/2026):** 5 testes API aprovados; 2 testes Web com erro na ativação da pesquisa. Carga e pico executados: carga 174,99 req/s, p90 9141 ms; pico 139,09 req/s, p90 10372 ms. Consulte o [relatório de performance](docs/performance-report.md), os [resultados funcionais](docs/validation.md) e a [conferência do PDF](docs/delivery-checklist.md).
+**Estado da validação (22/09/2026):** 5 testes API aprovados; 2 cenários Web independentes das calculadoras aprovados; 2 cenários Web de pesquisa com erro na ativação da pesquisa. Carga e pico executados: carga 174,99 req/s, p90 9141 ms; pico 139,09 req/s, p90 10372 ms. Consulte o [relatório de performance](docs/performance-report.md), os [resultados funcionais](docs/validation.md) e a [conferência do PDF](docs/delivery-checklist.md).
 
 ## Pré-requisitos
 
@@ -33,6 +33,8 @@ Endereços configuráveis por `-Dweb.baseUrl=https://blogdoagi.com.br/` e `-Dapi
 | --- | --- | --- |
 | Pesquisar `emprestimo` pela lupa | Termo no cabeçalho, artigos relevantes e abertura do artigo selecionado com título correspondente | Jornada principal de descoberta de conteúdo |
 | Pesquisar termo inexistente | Mensagem de ausência de resultados e nenhuma entrada de artigo | Comunicação correta quando a busca não encontra conteúdo |
+| Calculadora de dias úteis | Informar um período e conferir dias úteis e período exibido | Ferramenta financeira independente da pesquisa |
+| Calculadora de juros compostos | Simular investimento e conferir montante, valor investido e rendimento | Jornada de investimento independente da pesquisa |
 
 Os testes começam no endereço solicitado, atualmente redirecionado para `blog.agibank.com.br`. Cada teste usa seu próprio navegador, resolução desktop e esperas explícitas. Não são usados sleeps, retries automáticos ou contagem fixa de artigos. Conteúdo e HTML do site público podem mudar.
 

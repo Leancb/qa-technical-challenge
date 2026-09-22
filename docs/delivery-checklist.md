@@ -4,7 +4,7 @@ Fonte: `Teste técnico - QA.pdf`, fornecido pelo candidato. Conferência em 22/0
 
 | Requisito | Entrega | Estado |
 | --- | --- | --- |
-| Web: ao menos dois cenários relevantes pela lupa | Pesquisa com abertura de artigo e pesquisa sem resultados | Implementados e executados; 2 erros documentados |
+| Web: ao menos dois cenários relevantes | Pesquisa com abertura de artigo, pesquisa sem resultados, calculadora de dias úteis e calculadora de juros compostos | 4 implementados; 2 calculadoras aprovadas e 2 pesquisas bloqueadas pelo defeito da lupa |
 | API: três endpoints exigidos | `DogApiTest`, cinco casos | 5 aprovados no reteste |
 | API: formato, status e cenários de erro | JSON, HTTP, raças, URLs e contrato de erro | Aprovado |
 | Relatório de resultados | XML JUnit e HTML Surefire | Gerado com sucessos e erros |
