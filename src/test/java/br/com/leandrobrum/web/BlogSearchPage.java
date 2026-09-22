@@ -2,6 +2,7 @@ package br.com.leandrobrum.web;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,6 +30,12 @@ class BlogSearchPage {
     }
 
     void search(String term) {
+        // Astra instala onclick depois do carregamento adiado. Visibilidade
+        // sozinha nao garante que o botao responda ao clique.
+        wait.withMessage("O script Astra nao ativou o botao de pesquisa")
+                .until(browser -> Boolean.TRUE.equals(((JavascriptExecutor) browser)
+                        .executeScript("const button = document.querySelector('#ast-desktop-header a.astra-search-icon');"
+                                + "return button !== null && typeof button.onclick === 'function';")));
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("#ast-desktop-header a.astra-search-icon"))).click();
         WebElement field = wait.until(ExpectedConditions.visibilityOfElementLocated(
