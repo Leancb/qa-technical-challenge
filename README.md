@@ -2,7 +2,7 @@
 
 Automação em Java 17, Selenium WebDriver, RestAssured e JUnit 5; performance em JMeter 5.6.3. A estrutura separa testes, interação com páginas e planos de performance. JUnit mantém a solução pequena: o desafio não exige uma camada adicional de BDD.
 
-**Estado da validação:** os 5 testes API passaram na execução inicial do GitHub. Os 2 testes Web encontraram um defeito na abertura da pesquisa, descrito em [BUG-001](docs/BUG-001-pesquisa.md). O smoke JMeter passou; o critério de carga ainda não foi verificado. Veja [resultados e limitações](docs/validation.md).
+**Estado da validação (22/09/2026):** 5 testes API aprovados; 2 testes Web com erro na ativação da pesquisa. Carga e pico executados: carga 174,99 req/s, p90 9141 ms; pico 139,09 req/s, p90 10372 ms. Consulte o [relatório de performance](docs/performance-report.md), os [resultados funcionais](docs/validation.md) e a [conferência do PDF](docs/delivery-checklist.md).
 
 ## Pré-requisitos
 
@@ -79,7 +79,7 @@ Execute primeiro o smoke:
 jmeter -n -t performance/purchase.jmx -q performance/smoke.properties -l performance/results/smoke.jtl -j performance/results/smoke.log -e -o performance/results/smoke-html
 ```
 
-Com autorização do responsável pelo ambiente para a carga proposta:
+Carga e pico foram executados nesta entrega, após confirmação de autorização pelo candidato. Para repetir em ambiente autorizado:
 
 ```sh
 jmeter -n -t performance/purchase.jmx -q performance/load.properties -l performance/results/load.jtl -j performance/results/load.log -e -o performance/results/load-html
@@ -101,8 +101,8 @@ python3 performance/analyze.py performance/results/load.jtl --start-ms TIMESTAMP
 python3 performance/analyze.py performance/results/spike.jtl --start-ms TIMESTAMP_DA_JANELA --seconds 120
 ```
 
-O código de saída é 1 se o critério não for atingido ou houver falhas funcionais. Verifique também no log se o teste cobriu toda a janela. O dashboard inclui resultados por requisição, percentis, vazão e erros. Os resultados e limitações desta entrega estão em `docs/validation.md`.
+O código de saída é 1 se o critério não for atingido ou houver falhas funcionais. Verifique também no log se o teste cobriu toda a janela. O dashboard inclui resultados por requisição, percentis, vazão e erros. Os resultados, dashboards e conclusão desta entrega estão em [docs/performance-report.md](docs/performance-report.md).
 
 ## Publicação
 
-Crie um repositório público no GitHub e envie estes arquivos, excluindo `.tools/`, `target/` e resultados locais volumosos pelo `.gitignore`. Preserve os relatórios selecionados em `docs/evidence/` e os artefatos da pipeline. Não inclua currículo, telefone, e-mail pessoal, credenciais ou dados reais de pagamento.
+Repositório público: [Leancb/qa-technical-challenge](https://github.com/Leancb/qa-technical-challenge). O projeto inclui fontes, documentação e evidências, excluindo `.tools/`, `target/` e resultados locais volumosos pelo `.gitignore`. Preserve os relatórios selecionados em `docs/evidence/` e os artefatos da pipeline. Não inclua currículo, telefone, e-mail pessoal, credenciais ou dados reais de pagamento.

@@ -1,0 +1,135 @@
+{
+  "load": {
+    "window_start_ms": 1790117729546,
+    "window_seconds": 600.0,
+    "requests": 104993,
+    "rps": 174.98833333333334,
+    "p90_ms": 9141,
+    "errors": 6220,
+    "error_percent": 5.924204470774242,
+    "successful_purchases": 23474,
+    "criterion_met": false,
+    "functional_check_passed": false,
+    "percentile_method": "nearest rank; all HTTP samples, including failures",
+    "analysis_exit_code": 1,
+    "jmeter_exit_code": 0,
+    "jmeter_start_ms": 1790117669546,
+    "first_sample_ms": 1790117672454,
+    "last_sample_end_ms": 1790118349880,
+    "total_requests": 116637,
+    "total_errors": 6221,
+    "total_successful_purchases": 26146,
+    "window_response_codes": {
+      "200": 98773,
+      "Non HTTP response code: org.apache.http.NoHttpResponseException": 948,
+      "Non HTTP response code: java.net.SocketTimeoutException": 2894,
+      "Non HTTP response code: org.apache.http.conn.ConnectTimeoutException": 2281,
+      "Non HTTP response code: java.net.SocketException": 97
+    },
+    "window_failure_messages": {
+      "Test failed: code expected to equal /\n\n****** received  : [[[Non HTTP response code: org.apache.http.NoHttpResponseException]]]\n\n****** comparison: [[[200                                                            ]]]\n\n/": 948,
+      "Test failed: code expected to equal /\n\n****** received  : [[[Non HTTP response code: java.net.SocketTimeoutException]]]\n\n****** comparison: [[[200                                                    ]]]\n\n/": 2894,
+      "Test failed: code expected to equal /\n\n****** received  : [[[Non HTTP response code: org.apache.http.conn.ConnectTimeoutException]]]\n\n****** comparison: [[[200                                                                 ]]]\n\n/": 2281,
+      "Test failed: code expected to equal /\n\n****** received  : [[[Non HTTP response code: java.net.SocketException]]]\n\n****** comparison: [[[200                                             ]]]\n\n/": 97
+    },
+    "observed_samples_cover_window_end": true,
+    "phases": [
+      {
+        "phase": "warmup",
+        "seconds": 60,
+        "requests": 11466,
+        "rps": 191.1,
+        "p90_ms": 3075,
+        "errors": 0,
+        "successful_purchases": 2629
+      },
+      {
+        "phase": "steady",
+        "seconds": 600,
+        "requests": 104993,
+        "rps": 174.98833333333334,
+        "p90_ms": 9141,
+        "errors": 6220,
+        "successful_purchases": 23474
+      }
+    ],
+    "generator": {
+      "samples": 65,
+      "max_java_cpu_percent": 85.1,
+      "max_java_rss_mib": 1018.59765625,
+      "swapins_delta": 0,
+      "swapouts_delta": 0
+    }
+  },
+  "spike": {
+    "window_start_ms": 1790118426028,
+    "window_seconds": 120.0,
+    "requests": 16691,
+    "rps": 139.09166666666667,
+    "p90_ms": 10372,
+    "errors": 834,
+    "error_percent": 4.996704810975975,
+    "successful_purchases": 3710,
+    "criterion_met": false,
+    "functional_check_passed": false,
+    "percentile_method": "nearest rank; all HTTP samples, including failures",
+    "analysis_exit_code": 1,
+    "jmeter_exit_code": 0,
+    "jmeter_start_ms": 1790118366028,
+    "first_sample_ms": 1790118368581,
+    "last_sample_end_ms": 1790118612145,
+    "total_requests": 19770,
+    "total_errors": 844,
+    "total_successful_purchases": 4139,
+    "window_response_codes": {
+      "200": 15857,
+      "Non HTTP response code: java.net.SocketTimeoutException": 478,
+      "Non HTTP response code: org.apache.http.NoHttpResponseException": 136,
+      "Non HTTP response code: org.apache.http.conn.ConnectTimeoutException": 205,
+      "Non HTTP response code: java.net.SocketException": 15
+    },
+    "window_failure_messages": {
+      "Test failed: code expected to equal /\n\n****** received  : [[[Non HTTP response code: java.net.SocketTimeoutException]]]\n\n****** comparison: [[[200                                                    ]]]\n\n/": 478,
+      "Test failed: code expected to equal /\n\n****** received  : [[[Non HTTP response code: org.apache.http.NoHttpResponseException]]]\n\n****** comparison: [[[200                                                            ]]]\n\n/": 136,
+      "Test failed: code expected to equal /\n\n****** received  : [[[Non HTTP response code: org.apache.http.conn.ConnectTimeoutException]]]\n\n****** comparison: [[[200                                                                 ]]]\n\n/": 205,
+      "Test failed: code expected to equal /\n\n****** received  : [[[Non HTTP response code: java.net.SocketException]]]\n\n****** comparison: [[[200                                             ]]]\n\n/": 15
+    },
+    "observed_samples_cover_window_end": true,
+    "phases": [
+      {
+        "phase": "warmup",
+        "seconds": 60,
+        "requests": 1517,
+        "rps": 25.283333333333335,
+        "p90_ms": 2580,
+        "errors": 4,
+        "successful_purchases": 104
+      },
+      {
+        "phase": "peak",
+        "seconds": 120,
+        "requests": 16691,
+        "rps": 139.09166666666667,
+        "p90_ms": 10372,
+        "errors": 834,
+        "successful_purchases": 3710
+      },
+      {
+        "phase": "recovery",
+        "seconds": 60,
+        "requests": 1535,
+        "rps": 25.583333333333332,
+        "p90_ms": 2775,
+        "errors": 6,
+        "successful_purchases": 320
+      }
+    ],
+    "generator": {
+      "samples": 24,
+      "max_java_cpu_percent": 318.6,
+      "max_java_rss_mib": 1053.30859375,
+      "swapins_delta": 0,
+      "swapouts_delta": 0
+    }
+  }
+}

@@ -41,3 +41,7 @@ Não é possível afirmar que o defeito foi inserido propositalmente como parte 
 ## Reteste
 
 Após a correção, executar `mvn clean test "-Dgroups=web"`. Confirmar abertura do campo, envio dos termos, resultados relevantes com abertura de artigo e mensagem de ausência de resultados. Fechar o defeito somente com evidência dessa execução.
+
+### Reteste local de 22/09/2026
+
+Os dois cenários continuam com erro. Nesta rodada, a automação não chegou ao clique: expirou a espera por `onclick` no botão Astra (`BlogSearchPage.java:36`). Esse resultado não confirma novamente o sintoma pós-clique nem sua causa raiz. Evidências por cenário em [web-evidence.zip](evidence/retest-20260922/web-evidence.zip) e detalhes no [relatório de validação](validation.md). O defeito permanece aberto com base na reprodução anterior.
