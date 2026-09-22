@@ -7,8 +7,13 @@ permissions:
   contents: read
 jobs:
   tests:
+    name: Tests - ${{ matrix.suite }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        suite: [api, web]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -16,8 +21,8 @@ jobs:
           distribution: temurin
           java-version: '17'
           cache: maven
-      - name: Run Web and API suites
-        run: mvn -B -ntp clean test '-Dgroups=api | web'
+      - name: Run suite
+        run: mvn -B -ntp clean test '-Dgroups=${{ matrix.suite }}'
       - name: Generate HTML report
         if: always()
         run: mvn -B -ntp surefire-report:report-only
@@ -25,7 +30,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
+          name: test-results-${{ matrix.suite }}
           path: |
             target/surefire-reports/
             target/reports/

@@ -4,11 +4,15 @@ Execuções locais em 21/09/2026, macOS 12.7.6 Intel, Temurin JDK 17.0.20.1, Mav
 
 ## API
 
+**Evidência posterior no GitHub:** na [execução inicial de CI](https://github.com/Leancb/qa-technical-challenge/actions/runs/35679593189), os cinco testes API passaram, sem falhas ou erros. Os dois testes Web reproduziram a falha da lupa. O resultado em CI não apaga os timeouts locais registrados abaixo.
+
 Na execução inicial, cinco casos passaram: lista de raças, imagens de hound, imagens de pug, imagem aleatória e raça inexistente. Na execução final integrada, três passaram e dois terminaram com `SocketTimeoutException: Read timed out` (imagens de pug e raça inexistente, timeout de 15 s durante a conexão TLS). A causa externa específica não foi determinada: pode envolver serviço ou rede. Não foram aplicados retries para ocultar essa instabilidade.
 
 Resultado final integrado: **7 testes, 3 aprovados, 4 com erro** — dois Web e dois API. O comando Maven retornou código 1 corretamente. O relatório HTML Surefire foi gerado com sucesso, incluindo detalhes individuais; consulte o arquivo compactado em `docs/evidence/test-report.zip`.
 
 ## Web — falha reproduzida
+
+Defeito registrado em [BUG-001 — Lupa não abre o campo de pesquisa](BUG-001-pesquisa.md), incluindo confirmação do candidato, impacto, passos e mensagem sugerida ao recrutador. Não há evidência de que o defeito seja intencional. As suítes Web e API foram separadas em jobs de CI; nenhuma falha foi ignorada.
 
 Os dois cenários foram implementados, mas não aprovados no ambiente local. O campo de pesquisa não se tornou visível após o clique na lupa, causando timeout de 20 segundos. A pesquisa sem resultados também falhou com Chrome visível, portanto a reprodução não ficou restrita ao modo headless.
 

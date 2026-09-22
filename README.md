@@ -2,6 +2,8 @@
 
 Automação em Java 17, Selenium WebDriver, RestAssured e JUnit 5; performance em JMeter 5.6.3. A estrutura separa testes, interação com páginas e planos de performance. JUnit mantém a solução pequena: o desafio não exige uma camada adicional de BDD.
 
+**Estado da validação:** os 5 testes API passaram na execução inicial do GitHub. Os 2 testes Web encontraram um defeito na abertura da pesquisa, descrito em [BUG-001](docs/BUG-001-pesquisa.md). O smoke JMeter passou; o critério de carga ainda não foi verificado. Veja [resultados e limitações](docs/validation.md).
+
 ## Pré-requisitos
 
 - JDK 17 ou superior e Maven 3.9, disponíveis no `PATH`; `JAVA_HOME` aponta para o JDK.
@@ -53,7 +55,7 @@ mvn surefire-report:report-only
 
 Resultados individuais e stack traces ficam em `target/surefire-reports/`; o relatório HTML em `target/reports/` (ou `target/site/`, conforme configuração Maven). Em falhas durante testes Web, screenshot, HTML e URL ficam em `target/evidence/`.
 
-O workflow `.github/workflows/tests.yml` executa Web e API em pushes, pull requests ou manualmente. Os relatórios são publicados como artefato `test-results`, inclusive quando os testes falham. A execução local requer os mesmos pré-requisitos; o runner Ubuntu do GitHub já oferece Chrome.
+O workflow `.github/workflows/tests.yml` executa Web e API em jobs independentes em pushes, pull requests ou manualmente. Os relatórios são publicados como `test-results-api` e `test-results-web`, inclusive quando os testes falham. A falha de uma suíte não cancela a outra, mas mantém a pipeline com falha. A execução local requer os mesmos pré-requisitos; o runner Ubuntu do GitHub já oferece Chrome.
 
 ## Performance
 
