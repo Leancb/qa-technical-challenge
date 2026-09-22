@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="br.com.leandrobrum.web.BlogSearchTest" time="73.578" tests="2" errors="2" skipped="0" failures="0">
+  <testcase name="showsNoResults" classname="br.com.leandrobrum.web.BlogSearchTest" time="36.975">
+    <error message="Expected condition failed: waiting for visibility of element located by By.cssSelector: .ast-search-box.full-screen input[name='s'] (tried for 20 second(s) with 500 milliseconds interval)&#10;Build info: version: '4.28.1', revision: '73f5ad48a2'&#10;System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.20.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.125, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: /var/folders/2s/5rk99bv14xn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62583}, goog:processID: 27008, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62583/devtoo..., se:cdpVersion: 150.0.7871.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 23ba91f52691a8c2277bd1440694e7e9" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.cssSelector: .ast-search-box.full-screen input[name='s'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.20.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.125, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: /var/folders/2s/5rk99bv14xn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62583}, goog:processID: 27008, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62583/devtoo..., se:cdpVersion: 150.0.7871.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 23ba91f52691a8c2277bd1440694e7e9
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at br.com.leandrobrum.web.BlogSearchPage.search(BlogSearchPage.java:34)
+	at br.com.leandrobrum.web.BlogSearchTest.showsNoResults(BlogSearchTest.java:64)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+</error>
+    <system-err>set. 21, 2026 11:15:13 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTÊNCIA: Unable to find CDP implementation matching 150
+set. 21, 2026 11:15:13 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+ADVERTÊNCIA: Unable to find version of CDP to use for 150.0.7871.125. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.28.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+</system-err>
+  </testcase>
+  <testcase name="findsAndOpensArticle" classname="br.com.leandrobrum.web.BlogSearchTest" time="36.536">
+    <error message="Expected condition failed: waiting for visibility of element located by By.cssSelector: .ast-search-box.full-screen input[name='s'] (tried for 20 second(s) with 500 milliseconds interval)&#10;Build info: version: '4.28.1', revision: '73f5ad48a2'&#10;System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.20.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.125, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: /var/folders/2s/5rk99bv14xn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62625}, goog:processID: 27088, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62625/devtoo..., se:cdpVersion: 150.0.7871.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: da28b3931aa94728a202ecfa37ad0364" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.cssSelector: .ast-search-box.full-screen input[name='s'] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.28.1', revision: '73f5ad48a2'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '17.0.20.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 150.0.7871.125, chrome: {chromedriverVersion: 150.0.7871.124 (9261fd0a595..., userDataDir: /var/folders/2s/5rk99bv14xn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62625}, goog:processID: 27088, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62625/devtoo..., se:cdpVersion: 150.0.7871.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: da28b3931aa94728a202ecfa37ad0364
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at br.com.leandrobrum.web.BlogSearchPage.search(BlogSearchPage.java:34)
+	at br.com.leandrobrum.web.BlogSearchTest.findsAndOpensArticle(BlogSearchTest.java:48)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+</error>
+    <system-err>set. 21, 2026 11:15:48 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTÊNCIA: Unable to find CDP implementation matching 150
+set. 21, 2026 11:15:48 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+ADVERTÊNCIA: Unable to find version of CDP to use for 150.0.7871.125. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.28.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+</system-err>
+  </testcase>
+</testsuite>

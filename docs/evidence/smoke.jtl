@@ -1,0 +1,5 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1790042970364,1164,HTTP_01_Home,200,OK,Usuarios 1-1,text,true,,4757,122,1,1,https://www.blazedemo.com/,1148,0,852
+1790042971540,386,HTTP_02_Buscar,200,OK,Usuarios 1-1,text,true,,7381,252,1,1,https://www.blazedemo.com/reserve.php,384,0,0
+1790042972349,696,HTTP_03_Selecionar,200,OK,Usuarios 1-1,text,true,,6719,299,1,1,https://www.blazedemo.com/purchase.php,694,0,0
+1790042973053,462,HTTP_04_Confirmar,200,OK,Usuarios 1-1,text,true,,5780,420,1,1,https://www.blazedemo.com/confirmation.php,458,0,0
