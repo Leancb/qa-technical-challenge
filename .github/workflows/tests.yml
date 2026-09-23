@@ -22,7 +22,37 @@ jobs:
           java-version: '17'
           cache: maven
       - name: Run suite
+        id: tests
+        continue-on-error: true
         run: mvn -B -ntp clean test '-Dgroups=${{ matrix.suite }}'
+      - name: Publish test summary
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import glob, os, xml.etree.ElementTree as ET
+          rows=[]
+          totals={"tests":0,"failures":0,"errors":0,"skipped":0}
+          for path in glob.glob("target/surefire-reports/TEST-*.xml"):
+              root=ET.parse(path).getroot()
+              for key in totals:
+                  totals[key]+=int(root.attrib.get(key,0))
+              for case in root.findall("testcase"):
+                  name=case.attrib.get("name","test")
+                  status="PASS"
+                  if case.find("failure") is not None: status="FAIL"
+                  elif case.find("error") is not None: status="ERROR"
+                  elif case.find("skipped") is not None: status="SKIP"
+                  rows.append((status,name))
+          with open(os.environ["GITHUB_STEP_SUMMARY"],"a") as f:
+              f.write(f"## {os.environ.get('SUITE','').upper()} test summary\n\n")
+              f.write("| Status | Scenario |\n|---|---|\n")
+              for status,name in rows:
+                  f.write(f"| {status} | {name} |\n")
+              f.write(f"\n**Total:** {totals['tests']} · **Passed:** {totals['tests']-totals['failures']-totals['errors']-totals['skipped']} · **Failures:** {totals['failures']} · **Errors:** {totals['errors']} · **Skipped:** {totals['skipped']}\n")
+          PY
+        env:
+          SUITE: ${{ matrix.suite }}
       - name: Generate HTML report
         if: always()
         run: mvn -B -ntp surefire-report:report-only
@@ -37,3 +67,6 @@ jobs:
             target/site/
             target/evidence/
           retention-days: 14
+      - name: Fail job when tests failed
+        if: steps.tests.outcome == 'failure'
+        run: exit 1
