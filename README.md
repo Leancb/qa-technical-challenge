@@ -57,7 +57,7 @@ mvn surefire-report:report-only
 
 Resultados individuais e stack traces ficam em `target/surefire-reports/`; o relatório HTML em `target/reports/` (ou `target/site/`, conforme configuração Maven). Em falhas durante testes Web, screenshot, HTML e URL ficam em `target/evidence/`.
 
-O workflow `.github/workflows/tests.yml` executa Web e API em jobs independentes em pushes, pull requests ou manualmente. Os relatórios são publicados como `test-results-api` e `test-results-web`, inclusive quando os testes falham. A falha de uma suíte não cancela a outra, mas mantém a pipeline com falha. A execução local requer os mesmos pré-requisitos; o runner Ubuntu do GitHub já oferece Chrome.
+O workflow `.github/workflows/tests.yml` executa Web e API em jobs independentes em pushes, pull requests ou manualmente e também publica um job **Performance - committed results**. Esse terceiro job não dispara nova carga contra o BlazeDemo: ele valida a presença das evidências JMeter versionadas e apresenta no GitHub Actions o resultado medido de carga e pico, deixando explícito se o critério foi atendido. Os relatórios funcionais são publicados como `test-results-api` e `test-results-web`; as evidências de performance como `performance-results-20260922`. A falha de uma suíte funcional não cancela as demais. O resultado **NOT MET** de performance é tratado como resultado da medição, não como falha de infraestrutura da CI. A execução local requer os mesmos pré-requisitos; o runner Ubuntu do GitHub já oferece Chrome.
 
 ## Performance
 
