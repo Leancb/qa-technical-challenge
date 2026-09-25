@@ -23,9 +23,9 @@
 
 ## Impacto e cobertura
 
-Os cenários de pesquisa com resultados e sem resultados estão implementados, mas bloqueados funcionalmente nessa etapa. A execução automatizada deve falhar; os cenários não devem ser marcados como aprovados, ignorados ou substituídos por navegação direta para `?s=...`.
+Os cenários de pesquisa com resultados e sem resultados estão implementados, mas bloqueados funcionalmente nessa etapa. A execução automatizada deve falhar; os cenários não devem ser marcados como aprovados, ignorados ou substituídos pelo acesso direto à URL de resultados, por exemplo, `https://blog.agibank.com.br/?s=emprestimo`, em que o parâmetro `s` contém o termo pesquisado.
 
-A consulta direta por URL pode auxiliar o diagnóstico do backend de pesquisa, mas não valida a interação com a lupa exigida no desafio. Nenhum bypass desse tipo foi aplicado aos testes.
+Acessar essa URL diretamente pula o clique na lupa e o preenchimento do campo de pesquisa. A consulta direta pode auxiliar o diagnóstico do backend de pesquisa, mas não valida o fluxo de interação exigido no desafio. Esse desvio não foi aplicado aos testes.
 
 ## Investigação e limitações
 
