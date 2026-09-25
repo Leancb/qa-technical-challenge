@@ -1,6 +1,6 @@
-# Conferência da entrega contra o PDF
+# Matriz de requisitos e cobertura
 
-Fonte: `Teste técnico - QA.pdf`, fornecido pelo candidato. Conferência em 22/09/2026.
+Fonte: `Teste técnico - QA.pdf`. Conferência em 22/09/2026.
 
 | Requisito | Entrega | Estado |
 | --- | --- | --- |
@@ -18,6 +18,4 @@ Fonte: `Teste técnico - QA.pdf`, fornecido pelo candidato. Conferência em 22/0
 
 ## Limitações do resultado
 
-Os testes e relatórios foram entregues com seus resultados reais. A execução completa não significa aprovação: a pesquisa Web permanece bloqueada e o critério de performance deve ser avaliado pelos números do relatório. Não há mais pendência de autorização para as execuções realizadas, confirmada pelo candidato nesta sessão.
-
-O envio do link ao recrutador continua a cargo do candidato; nenhuma mensagem foi enviada. A mensagem sugerida sobre o defeito Web está em `BUG-001-pesquisa.md`.
+Os testes e relatórios foram entregues com seus resultados reais. A execução completa não significa aprovação: a pesquisa Web permanece bloqueada e o critério de performance deve ser avaliado pelos números do relatório.

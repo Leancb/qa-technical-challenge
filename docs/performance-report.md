@@ -1,6 +1,6 @@
 # Relatório de performance — 22/09/2026
 
-**Conclusão:** o critério de aceitação não foi atendido nesta execução. Foram executados os testes completos de carga e pico no BlazeDemo, após confirmação de autorização pelo candidato. A meta é vazão medida ≥ 250 requisições HTTP/s e p90 < 2.000 ms na mesma janela, com verificação adicional de erros e compras confirmadas.
+**Conclusão:** o critério de aceitação não foi atendido nesta execução. Foram executados os testes completos de carga e pico no BlazeDemo. A meta é vazão medida ≥ 250 requisições HTTP/s e p90 < 2.000 ms na mesma janela, com verificação adicional de erros e compras confirmadas.
 
 | Perfil / janela | Requisições | Req/s | p90 (ms) | Erros | Compras confirmadas |
 | --- | ---: | ---: | ---: | ---: | ---: |

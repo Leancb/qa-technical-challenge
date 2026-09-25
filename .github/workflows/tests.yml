@@ -98,7 +98,7 @@ jobs:
                               return value
               return None
 
-          # The committed report is the source of the evaluator-facing values.
+          # The committed report is the source of the displayed performance values.
           expected = {
               "load":  {"throughput": 174.99, "p90": 9141,  "errors": 6220, "purchases": 23474},
               "spike": {"throughput": 139.09, "p90": 10372, "errors": 834, "purchases": 3710},

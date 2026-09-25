@@ -1,6 +1,6 @@
-# Notas para o avaliador
+# Decisões técnicas
 
-Este documento resume decisões técnicas que podem não ficar evidentes apenas pela cor da pipeline.
+Este documento descreve a cobertura, a estrutura dos testes e o tratamento dos resultados na pipeline.
 
 ## Escopo Web
 
@@ -11,7 +11,7 @@ O requisito principal do desafio Web é a pesquisa de artigos pela lupa. Por iss
 
 Foram adicionados dois cenários independentes de calculadoras como cobertura complementar. Eles não substituem os cenários obrigatórios de pesquisa.
 
-Na execução consolidada de 22/09/2026, os quatro cenários Web foram executados. As duas calculadoras passaram; os dois cenários de pesquisa pararam na ativação da lupa do tema Astra. A falha foi mantida de propósito: acessar diretamente uma URL de resultados faria a automação contornar a jornada solicitada no desafio. O comportamento e as evidências estão registrados em `docs/BUG-001-pesquisa.md` e `docs/validation.md`.
+Na execução consolidada de 22/09/2026, os quatro cenários Web foram executados. As duas calculadoras passaram; os dois cenários de pesquisa pararam na ativação da lupa do tema Astra. Os testes exercitam a interação com a lupa; acessar diretamente uma URL de resultados não valida essa jornada. O comportamento e as evidências estão registrados em `docs/BUG-001-pesquisa.md` e `docs/validation.md`.
 
 ## Estrutura e manutenibilidade
 
@@ -31,10 +31,10 @@ Na execução entregue o critério não foi atingido. Carga: 174,99 req/s, p90 9
 
 ## Pipeline e evidências
 
-API e Web rodam em jobs independentes. O job Web permanece vermelho quando um cenário Web falha, mas o workflow agora publica no GitHub Actions um resumo por cenário antes de encerrar o job como falho. Assim, o avaliador consegue distinguir imediatamente os quatro cenários executados e seus resultados.
+API e Web rodam em jobs independentes. O job Web permanece vermelho quando um cenário Web falha, mas o workflow agora publica no GitHub Actions um resumo por cenário antes de encerrar o job como falho. O resumo apresenta os quatro cenários executados e seus resultados.
 
 Relatórios e evidências são publicados mesmo em caso de falha. Screenshots, HTML, URL e log do navegador são coletados para falhas da pesquisa.
 
-## Decisão de entrega
+## Rastreabilidade
 
-A intenção da entrega é tornar falhas observadas auditáveis, em vez de escondê-las para obter uma pipeline verde. Os documentos `docs/validation.md`, `docs/delivery-checklist.md` e `docs/performance-report.md` registram resultados, limitações e critérios utilizados.
+Os [resultados funcionais](validation.md), a [matriz de requisitos](delivery-checklist.md) e o [relatório de performance](performance-report.md) registram resultados, limitações e critérios utilizados.

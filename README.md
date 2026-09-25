@@ -2,7 +2,7 @@
 
 Automação em Java 17, Selenium WebDriver, RestAssured e JUnit 5; performance em JMeter 5.6.3. A estrutura separa testes, interação com páginas e planos de performance. JUnit mantém a solução pequena: o desafio não exige uma camada adicional de BDD.
 
-**Estado da validação (22/09/2026):** 5 testes API aprovados; 2 cenários Web independentes das calculadoras aprovados; 2 cenários Web de pesquisa com erro na ativação da pesquisa. Carga e pico executados: carga 174,99 req/s, p90 9141 ms; pico 139,09 req/s, p90 10372 ms. Consulte o [relatório de performance](docs/performance-report.md), os [resultados funcionais](docs/validation.md) e a [conferência do PDF](docs/delivery-checklist.md).
+**Estado da validação (22/09/2026):** 5 testes API aprovados; 2 cenários Web independentes das calculadoras aprovados; 2 cenários Web de pesquisa com erro na ativação da pesquisa. Carga e pico executados: carga 174,99 req/s, p90 9141 ms; pico 139,09 req/s, p90 10372 ms. Consulte o [relatório de performance](docs/performance-report.md), os [resultados funcionais](docs/validation.md), a [matriz de requisitos](docs/delivery-checklist.md) e as [decisões técnicas](docs/technical-decisions.md).
 
 ## Pré-requisitos
 
@@ -81,7 +81,7 @@ Execute primeiro o smoke:
 jmeter -n -t performance/purchase.jmx -q performance/smoke.properties -l performance/results/smoke.jtl -j performance/results/smoke.log -e -o performance/results/smoke-html
 ```
 
-Carga e pico foram executados nesta entrega, após confirmação de autorização pelo candidato. Para repetir em ambiente autorizado:
+Carga e pico foram executados em 22/09/2026. Para repetir em ambiente autorizado:
 
 ```sh
 jmeter -n -t performance/purchase.jmx -q performance/load.properties -l performance/results/load.jtl -j performance/results/load.log -e -o performance/results/load-html
@@ -105,6 +105,6 @@ python3 performance/analyze.py performance/results/spike.jtl --start-ms TIMESTAM
 
 O código de saída é 1 se o critério não for atingido ou houver falhas funcionais. Verifique também no log se o teste cobriu toda a janela. O dashboard inclui resultados por requisição, percentis, vazão e erros. Os resultados, dashboards e conclusão desta entrega estão em [docs/performance-report.md](docs/performance-report.md).
 
-## Publicação
+## Estrutura do repositório
 
-Repositório público: [Leancb/qa-technical-challenge](https://github.com/Leancb/qa-technical-challenge). O projeto inclui fontes, documentação e evidências, excluindo `.tools/`, `target/` e resultados locais volumosos pelo `.gitignore`. Preserve os relatórios selecionados em `docs/evidence/` e os artefatos da pipeline. Não inclua currículo, telefone, e-mail pessoal, credenciais ou dados reais de pagamento.
+O projeto inclui fontes, documentação e evidências selecionadas em `docs/evidence/`. Ferramentas locais (`.tools/`), arquivos de build (`target/`) e resultados locais de performance (`performance/results/`) são excluídos pelo `.gitignore`.

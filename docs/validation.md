@@ -23,11 +23,9 @@ Os dois cenários Web pararam em `BlogSearchPage.search`, linha 36: o predicado 
 
 Evidências: [relatório HTML](evidence/retest-20260922/test-report.zip), [capturas, HTML e console por cenário](evidence/retest-20260922/web-evidence.zip), XMLs JUnit e `maven.log` em `docs/evidence/retest-20260922/`.
 
-A tentativa inicial dentro do sandbox foi bloqueada por DNS e abertura de porta do Selenium. Os resultados acima correspondem à execução posterior fora do sandbox.
-
 ## Performance
 
-Carga e pico foram executados integralmente após confirmação de autorização pelo candidato. O [relatório de performance](performance-report.md) contém conclusão por critério, janelas, fases, falhas, uso do gerador e links dos dashboards e dados brutos. Não há mais pendência de execução desses perfis nesta entrega; o resultado medido deve ser distinguido da aprovação do sistema.
+Carga e pico foram executados integralmente em 22/09/2026. O [relatório de performance](performance-report.md) contém conclusão por critério, janelas, fases, falhas, uso do gerador e links dos dashboards e dados brutos. A execução completa desses perfis não implica aprovação do critério de aceitação.
 
 O gerador do plano também foi conferido: produz XML idêntico ao `purchase.jmx` entregue. O smoke confirmou uma compra; seu p90 de 2.454 ms não foi usado como evidência de capacidade a 250 req/s.
 
